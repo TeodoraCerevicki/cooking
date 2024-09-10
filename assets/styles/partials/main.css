@@ -1,0 +1,349 @@
+img {
+  width: 100%;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Main-Regular";
+  font-size: 16px;
+  margin: 0;
+  color: #242424;
+}
+body * {
+  outline: none;
+}
+
+body, div, h1, h2, h3, h4, h5, h6, p, a, span, section, header, nav, main, footer, article, aside, ul, li {
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+span {
+  line-height: inherit;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a {
+  color: #242424;
+  transition: 0.3s;
+  display: inline-block;
+  transition: 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover, a:hover::before {
+  color: #242424;
+}
+@media (hover: hover) {
+  a:hover {
+    color: #242424;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Main-Medium";
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+p {
+  color: #242424;
+}
+
+@font-face {
+  font-family: "Main-Light";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../../assets/fonts/Montserrat/static/Montserrat-Light.ttf");
+}
+@font-face {
+  font-family: "Main-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../../assets/fonts/Montserrat/static/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: "Main-Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../../assets/fonts/Montserrat/static/Montserrat-Medium.ttf");
+}
+@font-face {
+  font-family: "Main-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../../assets/fonts/Montserrat/static/Montserrat-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Handwritten";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../../assets/fonts/Playwrite_CU/PlaywriteCU-ExtraLight.ttf");
+}
+.button-basic, .button-stroked, .button-flat, .button-fab {
+  font-family: "Main-Medium";
+  font-size: 14px;
+  padding: 16px 22px;
+  transition: 0.2s;
+  border: 1px solid transparent;
+  line-height: 1.1;
+  text-transform: capitalize;
+}
+.button-basic:disabled, .button-stroked:disabled, .button-flat:disabled, .button-fab:disabled, .disabled.button-basic, .disabled.button-stroked, .disabled.button-flat, .disabled.button-fab {
+  background-color: #8E8F8F !important;
+  cursor: not-allowed;
+  color: #FFF;
+}
+.warn.button-basic, .warn.button-stroked, .warn.button-flat, .warn.button-fab {
+  background-color: #D92946 !important;
+  border-color: #D92946 !important;
+  color: #FFF !important;
+}
+
+.button-primary {
+  --background-color: #625782;
+  --background-color-light: #B1ACC1;
+  --border-color: #625782;
+  --color: #625782;
+}
+
+.button-accent {
+  --background-color: #81A2AC;
+  --background-color-light: #add8e6;
+  --border-color: #81A2AC;
+  --color: #81A2AC;
+}
+
+.button-basic, .button-stroked {
+  color: var(--color);
+}
+
+.button-stroked:hover, .button-flat:hover, .button-fab:hover {
+  background-color: var(--background-color-light);
+}
+
+.button-basic:hover {
+  border-color: var(--border-color);
+}
+
+.button-stroked {
+  border: 1px solid var(--border-color);
+}
+
+.button-flat, .button-fab {
+  background-color: var(--background-color);
+  color: #FFF;
+}
+
+.button-fab {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+.button-fab_text {
+  display: block;
+  margin-left: calc(16px / 2);
+  font-size: 16px;
+}
+.button-fab.-responsive .button-fab_text {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .button-fab.-responsive .button-fab_text {
+    display: block;
+  }
+}
+
+.main-nav .list {
+  display: flex;
+}
+.main-nav .link {
+  font-family: "Main-Bold";
+  font-size: 16px;
+  padding: 8px 16px;
+  border-bottom: 1px solid transparent;
+  text-transform: uppercase;
+  color: #242424;
+  font-size: 18px;
+}
+.main-nav .link.active, .main-nav .link:hover {
+  border-bottom-color: #242424;
+}
+
+.sweet-food {
+  --background-color-text: #bb7dd2;
+  --background-color-image: radial-gradient(circle, rgba(140,93,157,1) 0%, rgba(187,125,210,1) 100%);
+}
+
+.recipe {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0;
+  justify-items: center;
+}
+.recipe .image-section, .recipe .text-section {
+  width: 100%;
+}
+.recipe .image-section {
+  background: var(--background-color-image);
+}
+.recipe .image-section .icon {
+  font-size: 100px;
+  color: #FFF;
+}
+.recipe .text-section {
+  height: 100vh;
+  overflow-y: auto;
+  background-color: var(--background-color-text);
+  color: #FFF;
+}
+.recipe-header,
+.recipe .content {
+  height: 100vh;
+}
+.recipe-title {
+  font-family: "Main-Regular";
+  font-size: 40px;
+  text-align: center;
+}
+.recipe .content {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 80px;
+}
+
+.first-letter-capitalized {
+  display: inline-block;
+}
+.first-letter-capitalized::first-letter {
+  text-transform: capitalize;
+}
+
+.capitalized {
+  text-transform: uppercase;
+}
+
+.emphasized {
+  display: block;
+  font-family: "Handwritten";
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-right: calc(16px * 2);
+  padding-left: calc(16px * 2);
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 668px;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1120px;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1280px;
+  }
+}
+
+.display-flex {
+  display: flex;
+}
+
+.space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.align-center-fully {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show-on-mobile {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .show-on-mobile {
+    display: none;
+  }
+}
+
+.show-on-tablet {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .show-on-tablet {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hide-on-desktop {
+    display: none;
+  }
+}
+
+.show-on-desktop {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .show-on-desktop {
+    display: block;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.draggable {
+  cursor: grab;
+}
+
+.forbidden {
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=main.css.map */

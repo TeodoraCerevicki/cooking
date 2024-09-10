@@ -1,0 +1,46 @@
+$fonts-path: '../../../assets/fonts';
+
+@font-face {
+    font: {
+        family: 'Main-Light';
+		style: normal;
+		weight: 400;
+    }
+    src: url('#{$fonts-path}/Montserrat/static/Montserrat-Light.ttf');
+}
+
+@font-face {
+    font: {
+        family: 'Main-Regular';
+		style: normal;
+		weight: 400;
+    }
+    src: url('#{$fonts-path}/Montserrat/static/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font: {
+        family: 'Main-Medium';
+		style: normal;
+		weight: 500;
+    }
+    src: url('#{$fonts-path}/Montserrat/static/Montserrat-Medium.ttf');
+}
+
+@font-face {
+    font: {
+        family: 'Main-Bold';
+		style: normal;
+		weight: 700;
+    }
+    src: url('#{$fonts-path}/Montserrat/static/Montserrat-SemiBold.ttf');
+}
+
+@font-face {
+    font: {
+        family: 'Handwritten';
+		style: normal;
+		weight: 400;
+    }
+    src: url('#{$fonts-path}/Playwrite_CU/PlaywriteCU-ExtraLight.ttf');
+}

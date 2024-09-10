@@ -1,0 +1,53 @@
+@use '../../../modules/variables' as vars;
+@use '../../../modules/typography/fonts';
+
+.sweet-food {
+	--background-color-text: #bb7dd2;
+	--background-color-image: radial-gradient(circle, rgba(140,93,157,1) 0%, rgba(187,125,210,1) 100%);
+}
+
+.recipe {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0;
+    justify-items: center;
+
+    .image-section, .text-section {
+        width: 100%;
+    }
+
+    .image-section {
+        background: var(--background-color-image);
+
+        .icon {
+            font-size: 100px;
+            color: vars.$font-color-light;
+        }
+    }
+
+    .text-section {
+        height: 100vh;
+        overflow-y: auto;
+        background-color: var(--background-color-text);
+        color: vars.$font-color-light;
+    }
+
+    &-header,
+    .content {
+        height: 100vh;
+    }
+
+    &-title {
+        @include fonts.main-font(40px);
+        text-align: center;
+    }
+
+    .content {
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 80px;
+    }
+}

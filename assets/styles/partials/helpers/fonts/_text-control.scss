@@ -1,0 +1,16 @@
+.first-letter-capitalized {
+	display: inline-block;
+
+	&::first-letter {
+		text-transform: capitalize;
+	}
+}
+
+.capitalized {
+	text-transform: uppercase;
+}
+
+.emphasized {
+	display: block;
+	font-family: 'Handwritten';
+}
