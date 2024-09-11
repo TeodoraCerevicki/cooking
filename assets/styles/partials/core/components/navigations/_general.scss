@@ -2,20 +2,46 @@
 @use '../../../../modules/typography/fonts';
 
 .main-nav {
-    .list {
-        display: flex;
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0;
+    justify-items: center;
+
+    padding: vars.$gap-default 0;
+    border-bottom: vars.$default-border;
+    color: vars.$font-color-light;
 
     .link {
-        @include fonts.main-bold-font(vars.$font-size-large);
-        padding: 8px 16px;
-        border-bottom: 1px solid transparent;
-        text-transform: uppercase;
-        color: vars.$font-color;
-        font-size: 18px;
+        margin-left: vars.$gap-large;
+        font-size: 20px;
 
-        &.active, &:hover {
-            border-bottom-color: vars.$font-color;
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:hover {
+            animation: pulse .5s;
         }
     }
 }
+
+.recipe-page {
+    .main-nav {
+        position: absolute;
+        width: 50%;
+        border-bottom: vars.$default-border;
+        color: vars.$font-color-light;
+    }
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

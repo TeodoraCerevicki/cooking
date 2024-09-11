@@ -1,3 +1,4 @@
+@use '../../../modules/variables' as vars;
 // ul {
 // 	margin: 0;
 // 	padding: 0;
@@ -6,3 +7,11 @@
 // li {
 // 	list-style-type: none;
 // }
+
+ol li {
+    padding-left: vars.$gap-small;
+}
+
+li {
+    margin-bottom: 4px;
+}

@@ -2,8 +2,45 @@
 @use '../../../modules/typography/fonts';
 
 .sweet-food {
-	--background-color-text: #bb7dd2;
-	--background-color-image: radial-gradient(circle, rgba(140,93,157,1) 0%, rgba(187,125,210,1) 100%);
+	--background-solid-color: #bb7dd2;
+	--background-gradient-color: radial-gradient(circle, rgba(140,93,157,1) 0%, rgba(187,125,210,1) 100%);
+    // 8c5d9d
+}
+.salty-food {
+	--background-solid-color: #7BD186;
+	--background-gradient-color: radial-gradient(circle, rgba(92,156,100,1) 0%, rgba(123,209,134,1) 100%);
+    // 5c9c64
+}
+
+.card {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    padding: vars.$gap-large;
+    background: var(--background-solid-color);
+    color: vars.$font-color-light;
+    border-radius: 28% 39% 25% 75% / 39% 43% 38% 32%;
+
+    &:nth-child(even) {
+        border-radius: 36% 64% 35% 65%/55% 31% 69% 45%;
+    }
+
+    &:hover {
+        background: var(--background-gradient-color);
+        transition: vars.$default-transition;
+    }
+
+    .icon {
+        font-size: 50px;
+    }
+
+    .text {
+        display: flex;
+        align-items: baseline;
+        margin-left: 32px;
+        font-size: 21px;
+    }
 }
 
 .recipe {
@@ -18,7 +55,7 @@
     }
 
     .image-section {
-        background: var(--background-color-image);
+        background: var(--background-gradient-color);
 
         .icon {
             font-size: 100px;
@@ -29,7 +66,7 @@
     .text-section {
         height: 100vh;
         overflow-y: auto;
-        background-color: var(--background-color-text);
+        background-color: var(--background-solid-color);
         color: vars.$font-color-light;
     }
 
@@ -49,5 +86,9 @@
         flex-direction: column;
         justify-content: center;
         padding-left: 80px;
+    }
+
+    .list {
+        max-width: 400px;
     }
 }

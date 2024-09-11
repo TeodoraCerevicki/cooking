@@ -1,3 +1,122 @@
+.first-letter-capitalized {
+  display: inline-block;
+}
+.first-letter-capitalized::first-letter {
+  text-transform: capitalize;
+}
+
+.capitalized {
+  text-transform: uppercase;
+}
+
+.emphasized {
+  display: block;
+  margin: 0px 8px;
+  font-family: "Handwritten";
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-right: calc(16px * 2);
+  padding-left: calc(16px * 2);
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 668px;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1120px;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1280px;
+  }
+}
+
+.display-flex {
+  display: flex;
+}
+
+.space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.align-center-fully {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show-on-mobile {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .show-on-mobile {
+    display: none;
+  }
+}
+
+.show-on-tablet {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .show-on-tablet {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hide-on-desktop {
+    display: none;
+  }
+}
+
+.show-on-desktop {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .show-on-desktop {
+    display: block;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.draggable {
+  cursor: grab;
+}
+
+.forbidden {
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none;
+}
+
 img {
   width: 100%;
 }
@@ -33,20 +152,10 @@ button {
 }
 
 a {
-  color: #242424;
-  transition: 0.3s;
   display: inline-block;
-  transition: 0.3s;
   text-decoration: none;
   cursor: pointer;
-}
-a:hover, a:hover::before {
-  color: #242424;
-}
-@media (hover: hover) {
-  a:hover {
-    color: #242424;
-  }
+  color: inherit;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -59,8 +168,12 @@ h1 {
   line-height: 1.25;
 }
 
-p {
-  color: #242424;
+ol li {
+  padding-left: calc(16px / 2);
+}
+
+li {
+  margin-bottom: 4px;
 }
 
 @font-face {
@@ -169,25 +282,79 @@ p {
   }
 }
 
-.main-nav .list {
-  display: flex;
+.main-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0;
+  justify-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #fff;
+  color: #FFF;
 }
 .main-nav .link {
-  font-family: "Main-Bold";
-  font-size: 16px;
-  padding: 8px 16px;
-  border-bottom: 1px solid transparent;
-  text-transform: uppercase;
-  color: #242424;
-  font-size: 18px;
+  margin-left: calc(16px * 2);
+  font-size: 20px;
 }
-.main-nav .link.active, .main-nav .link:hover {
-  border-bottom-color: #242424;
+.main-nav .link:first-child {
+  margin-left: 0;
+}
+.main-nav .link:hover {
+  animation: pulse 0.5s;
 }
 
+.recipe-page .main-nav {
+  position: absolute;
+  width: 50%;
+  border-bottom: 1px solid #fff;
+  color: #FFF;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .sweet-food {
-  --background-color-text: #bb7dd2;
-  --background-color-image: radial-gradient(circle, rgba(140,93,157,1) 0%, rgba(187,125,210,1) 100%);
+  --background-solid-color: #bb7dd2;
+  --background-gradient-color: radial-gradient(circle, rgba(140,93,157,1) 0%, rgba(187,125,210,1) 100%);
+}
+
+.salty-food {
+  --background-solid-color: #7BD186;
+  --background-gradient-color: radial-gradient(circle, rgba(92,156,100,1) 0%, rgba(123,209,134,1) 100%);
+}
+
+.card {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  padding: calc(16px * 2);
+  background: var(--background-solid-color);
+  color: #FFF;
+  border-radius: 28% 39% 25% 75%/39% 43% 38% 32%;
+}
+.card:nth-child(even) {
+  border-radius: 36% 64% 35% 65%/55% 31% 69% 45%;
+}
+.card:hover {
+  background: var(--background-gradient-color);
+  transition: 0.3s;
+}
+.card .icon {
+  font-size: 50px;
+}
+.card .text {
+  display: flex;
+  align-items: baseline;
+  margin-left: 32px;
+  font-size: 21px;
 }
 
 .recipe {
@@ -201,7 +368,7 @@ p {
   width: 100%;
 }
 .recipe .image-section {
-  background: var(--background-color-image);
+  background: var(--background-gradient-color);
 }
 .recipe .image-section .icon {
   font-size: 100px;
@@ -210,7 +377,7 @@ p {
 .recipe .text-section {
   height: 100vh;
   overflow-y: auto;
-  background-color: var(--background-color-text);
+  background-color: var(--background-solid-color);
   color: #FFF;
 }
 .recipe-header,
@@ -229,121 +396,6 @@ p {
   justify-content: center;
   padding-left: 80px;
 }
-
-.first-letter-capitalized {
-  display: inline-block;
-}
-.first-letter-capitalized::first-letter {
-  text-transform: capitalize;
-}
-
-.capitalized {
-  text-transform: uppercase;
-}
-
-.emphasized {
-  display: block;
-  font-family: "Handwritten";
-}
-
-.container {
-  width: 100%;
-  margin: 0 auto;
-  padding-right: calc(16px * 2);
-  padding-left: calc(16px * 2);
-}
-@media screen and (min-width: 768px) {
-  .container {
-    width: 668px;
-    padding: 0;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .container {
-    width: 1120px;
-    padding: 0;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .container {
-    width: 1280px;
-  }
-}
-
-.display-flex {
-  display: flex;
-}
-
-.space-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.align-center-fully {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.align-center {
-  display: flex;
-  align-items: center;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.hide {
-  display: none !important;
-}
-
-.show-on-mobile {
-  display: block;
-}
-@media screen and (min-width: 768px) {
-  .show-on-mobile {
-    display: none;
-  }
-}
-
-.show-on-tablet {
-  display: none;
-}
-@media screen and (min-width: 768px) {
-  .show-on-tablet {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .hide-on-desktop {
-    display: none;
-  }
-}
-
-.show-on-desktop {
-  display: none;
-}
-@media screen and (min-width: 1024px) {
-  .show-on-desktop {
-    display: block;
-  }
-}
-
-.clickable {
-  cursor: pointer;
-}
-
-.draggable {
-  cursor: grab;
-}
-
-.forbidden {
-  cursor: not-allowed;
-}
-
-.hidden {
-  display: none;
+.recipe .list {
+  max-width: 400px;
 }/*# sourceMappingURL=main.css.map */
